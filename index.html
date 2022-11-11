@@ -127,7 +127,7 @@
             const alpha = people.sort(function(lastOne, nextOne) {
             // 2.
             // const alpha2 = people.sort((lastOne, nextOne) => {
-                
+
                 // ------ DESTRUCTURING THE ARRAY -------
                 // returns an array of { lastName: "", firstName: ""} for each 
                 const parts = lastOne.split(", ")
@@ -142,6 +142,16 @@
         // Sum up the instances of each of these
         const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+            const transportation = data.reduce(function(obj, item) {
+                // console.log(item)
+                // Checks for item nonexistance 
+                if(!obj[item]){
+                    obj[item] = 0;
+                }
+                // If item exists, then count the number of same item
+                obj[item]++;
+                return obj;
+            }, {})
 
     </script>
 
